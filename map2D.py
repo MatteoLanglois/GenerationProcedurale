@@ -29,9 +29,10 @@ class Map2D:
         for i in range(0, self.size):
             for j in range(0, self.size):
                 noise_val = self.perlin1([i / scale, j / scale]) + 0.5 * \
-                            self.perlin2([i / scale, j / scale]) + 0.5 * \
+                            self.perlin2([i / scale, j / scale]) + 0.25 * \
                             self.perlin3([i / scale, j / scale]) + 0.125 * \
-                            self.perlin4([i / scale, j / scale])
+                            self.perlin4([i / scale, j / scale]) - 0.625 * \
+                            self.perlin1([i / scale, j / scale])
                 height = int(noise_val * self.MAX_HEIGHT) + 5
                 if height < 1:
                     height = 1

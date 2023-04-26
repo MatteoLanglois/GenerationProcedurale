@@ -111,9 +111,9 @@ class MapGen:
             for y in range(0, np.asarray(chunk).shape[1]):
                 for z in range(0, self.MAX_HEIGHT):
                     if z <= HeightMap[x][y]:
-                        Array[x, y, z] = True
+                        Array[x, y, z] = 1
                     else:
-                        Array[x, y, z] = False
+                        Array[x, y, z] = 0
                     ArrayColor[x, y, z] = [H / 255 for H in chunk[x][y]]
         logging.info(f"\x1b[33;20m Thread n°{Th_id} finishing : Voxel Gen \x1b[0m")
         return Array, row, column, ArrayColor
@@ -158,3 +158,8 @@ class MapGen:
         ax.axis('off')
 
         plt.show()
+
+    def save(self, map):
+        logging.info("\x1b[33;32m Saving map \x1b[0m")
+        np.save(f"map", map)
+        logging.info("\x1b[33;32m Map saved \x1b[0m")

@@ -9,6 +9,8 @@ def main():
     GenNormale = MapGen(seed, 100, 25, 20, 2, biomeList=Biome.simpleBiomes(1, 3, 15, -5, 40, 50))
     MapNormale = GenNormale.generate()
     Map3D, couleur = GenNormale.gen3DMap(MapNormale)
+    # GenNormale.save(Map3D)
+
     # GenNormale.showMap(MapNormale)
     GenNormale.show3DMap(Map3D, couleur)
 

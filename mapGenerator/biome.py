@@ -64,6 +64,4 @@ class biome:
 
     @staticmethod
     def rgbToHex(rgb):
-        return f"#{hex(rgb[0])[2:].upper() if len(hex(rgb[0])[2:]) == 2 else '0' + hex(rgb[0])[2:].upper()}" \
-               f"{hex(rgb[1])[2:].upper() if len(hex(rgb[1])[2:]) == 2 else '0' + hex(rgb[1])[2:].upper()}" \
-               f"{hex(rgb[2])[2:].upper() if len(hex(rgb[2])[2:]) == 2 else '0' + hex(rgb[2])[2:].upper()}" \
+        return f"#{hex(rgb[0])[2:].upper() if len(hex(rgb[0])[2:]) == 2 else '0' + hex(rgb[0])[2:].upper()}{hex(rgb[1])[2:].upper() if len(hex(rgb[1])[2:]) == 2 else '0' + hex(rgb[1])[2:].upper()}{hex(rgb[2])[2:].upper() if len(hex(rgb[2])[2:]) == 2 else '0' + hex(rgb[2])[2:].upper()}"
